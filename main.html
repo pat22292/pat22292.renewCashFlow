@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+</head>
+<body class="fixed-nav sticky-footer" id="page-top">
+
+<div id="Header"> </div>
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="main.html">Bank Management</a>
+            </li>
+        </ol>
+<div id="Banks">
+ 
+
+<select class="custom-select-sm float-left">
+   
+    <option selected>Small Custom Select Menu</option>
+    <option  v-for="(item, index) in divisions" :key="index" :value=item.name>{{item.name}}</option>
+</select>
+    <select class="custom-select-sm float-left" style="margin-left: 5px;">
+    
+        <option selected>Bank Status</option>
+        <option>Active</option>
+        <option>InActive</option>
+    </select>
+</div>
+        <button type="button" href="#addBankModal" data-toggle="modal" class="btn btn-success float-right">Add new bank</button>
+        <br>
+        <br>
+        
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover" width="100%" cellspacing="0">
+                <thead>
+                    <tr/>
+                    <th>Bank Name</th>
+                    <th>Branch</th>
+                    <th>Account No.</th>
+                    <th>Status</th>
+                    <th>Current Balance</th>
+                    <th>Status</th>
+                    </tr>
+                </thead>
+        
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="#editBankModal" data-toggle="modal">Metro Bank</a>
+                        </td>
+                        <td>Guiguinto</td>
+                        <td>10001-101</td>
+                        <td>Active</td>
+                        <td>₱10,100,100.00</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#editBankModal" data-toggle="modal">China Bank</a>
+                        </td>
+                        <td>Guiguinto</td>
+                        <td>310-1013</td>
+                        <td>Active</td>
+                        <td>₱1,100,100.00</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#editBankModal" data-toggle="modal">Bank of Philippine Islands</a>
+                        </td>
+                        <td>Malolos</td>
+                        <td>645-9785</td>
+                        <td>Active</td>
+                        <td>₱86,000</td>
+                        <td>Active</td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid-->
+<!-- /.content-wrapper-->
+<footer class="sticky-footer">
+    <div class="container">
+        <div class="text-center">
+            <small>Copyright © Your Website 2018</small>
+        </div>
+    </div>
+</footer>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fa fa-angle-up"></i>
+</a>
+<!-- Logout Modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="index.html">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Edit Modal-->
+<div class="modal fade" id="editBankModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Edit Bank Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Name</label>
+                        <div class="col-sm-10">
+                            <input type="BankName" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Bank Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Branch</label>
+                        <div class="col-sm-10">
+                            <input type="BranchName" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Branch Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Account No.</label>
+                        <div class="col-sm-10">
+                            <input type="AccountNumber" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Account Number">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Status</label>
+                        <div class="col-sm-10">
+                            <input type="Status" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Account Status">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Balance</label>
+                        <div class="col-sm-10">
+                            <input type="Balance" class="form-control form-control-sm" id="colFormLabelSm" placeholder="₱10,100,100.00">
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--add Modal-->
+<div class="modal fade" id="addBankModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Bank Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Name</label>
+                        <div class="col-sm-10">
+                            <input type="BankName" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Bank Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Branch</label>
+                        <div class="col-sm-10">
+                            <input type="BranchName" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Branch Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Account No.</label>
+                        <div class="col-sm-10">
+                            <input type="AccountNumber" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Account Number">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Status</label>
+                        <div class="col-sm-10">
+                            <input type="Status" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Account Status">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Balance</label>
+                        <div class="col-sm-10">
+                            <input type="Balance" class="form-control form-control-sm" id="colFormLabelSm" placeholder="₱10,100,100.00">
+                        </div>
+                    </div>
+            </div>
+    <script src="vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="app.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <!-- <script src="vendor/chart.js/Chart.min.js"></script> -->
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="js/sb-admin-datatables.min.js"></script>
+    <!-- <script src="js/sb-admin-charts.min.js"></script> -->
+ 
+</body>
+</html>
